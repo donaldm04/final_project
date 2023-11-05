@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<form role="form" action="" method="POST">
+		{% csrf_token %}
+		<div class="container p-4 p-md-5">
+			<div class="d-flex justify-content-center">
+				<div class="card shadow w-50">
+					<div class="card-header bg-white">
+						<h4 class="card-title text-center">Edit Post</h4>
+					</div>
+					<div class="card-body px-3 px-md-5 pb-md-5">
+						<div class="form-group">
+							{{ post_form.as_p }}
+							<button type="submit" class="btn btn-primary btn-lg w-100">Post</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endblock %}

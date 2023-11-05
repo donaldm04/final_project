@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container p-4 p-md-5">
+		<div class="d-flex justify-content-center">
+			<div class="card shadow w-50">
+				<div class="card-header bg-white">
+					<h4 class="card-title">{{ post.title }}</h4>
+					{{ post.date_posted }}
+				</div>
+				<div class="card-body px-3 px-md-5 pb-md-5">
+					<div class="table-responsive">
+						<table class="table table-bordered w-100">
+							<tbody>
+								<tr>
+									<td colspan="2"><p>{{ post.content|linebreaksbr }}</p></td>
+								</tr>
+								<tr>
+									<td>Last Updated</td>
+									<td>{{ post.date_modified }}</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-bordered w-100">
+							<tbody>
+								<tr>
+									<th style="width:60%">Comments ({{ comments.count }})</th>
+									<th style="width:40%" colspan="2"><a href="{% url 'blog:create_comment' post.id %}" class="link-primary w-100">Add Comment</a></th>
+								</tr>
+								{% for comment in comments %}
+								<tr>
+									<td>
+										<p>{{ comment.comment|linebreaksbr }}
+									</td>
+									<td style="width:5%">
+										<a href="{% url 'blog:edit_comment' comment.id post.id %}" class="link-dark">Edit</a>
+									</td>
+									<td style="width:9%">
+										<a href="{% url 'blog:delete_comment' comment.id post.id %}" class="link-dark">Delete</a>
+									</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

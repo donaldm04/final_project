@@ -1,0 +1,35 @@
+﻿html, body {
+	font-size: 14px;	
+	min-height: 100%;
+}
+
+textarea {
+	resize: none;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+.table {
+	font-size: 13.5px;
+}
+
+#header {
+  transition: all 0.5s;
+  border-color: #3367D6;
+  box-shadow: 0px 1px 7px rgba(18, 66, 101, 0.3);
+  -webkit-box-shadow: 0px 1px 7px rgba(18, 66, 101, 0.3);
+  -moz-box-shadow: 0px 1px 7px rgba(18, 66, 101, 0.3);
+  z-index: 997;
+  height: 70px;
+}
+
+#header.header-scrolled {
+  border-color: #3367D6;
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.3);
+  -webkit-box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.3);
+  -moz-box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.3);
+}
